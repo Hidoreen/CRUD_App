@@ -52,6 +52,11 @@ function acceptData() {
  data['details'] = taskDetails.value;
 
  createTask();
+
+ //IIFE to take close the modal after submitting
+ (() => {
+  closeModal()
+ })()
 }
 
 function createTask() {
@@ -60,10 +65,30 @@ function createTask() {
     <p class="date">${data.date}</p>
     <p class="details">${data.details}</p>
     <span class="taskEditors">
-      <i class="fa fa-trash" aria-hidden="true"></i>
-      <i class="fa fa-pencil" aria-hidden="true"></i>
+      <i onClick="deleteTask(this)" class="fa fa-trash" aria-hidden="true"></i>
+      <i onClick="editTask(this)" class="fa fa-pencil" aria-hidden="true"></i>
     </span>
-  </div> `
+  </div> `;
+  resetTask();
 }
 
+//globally defined the delete and edit function, not the best practice
+window.deleteTask = function(e) {
+  e.parentElement.parentElement.remove();
+};
+
+window.editTask = function(e) {
+  taskTitle.value = e.parentElement.previousSibling.innerHTML;
+  
+};
+
+
 } 
+
+const resetTask = () => {
+  taskTitle.value = '';
+  taskDate.value = '';
+  taskDetails.value = '';
+
+
+}
