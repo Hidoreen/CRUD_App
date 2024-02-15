@@ -90,8 +90,8 @@ export default function createTodoApp() {
   //globally defined the delete and edit function
   window.deleteTask = function(e) {
     e.parentElement.parentElement.remove();
-    data.splice(e.parentElement.parentElement.i, 1);
-    console.log(data);
+    data.splice(e.parentElement.parentElement.index, 1);
+    
     localStorage.setItem('data', JSON.stringify(data));
   };
 
@@ -108,6 +108,8 @@ export default function createTodoApp() {
 
   window.editTask = function(e) {
     const taskElement = e.parentElement.parentElement;
+
+    const taskIndex = taskElement.getAttribute('id');
     const taskTitle = taskElement.querySelector('.h4').textContent;
     const taskDate = taskElement.querySelector('.date').textContent;
     const taskDetails = taskElement.querySelector('.details').textContent;
@@ -116,6 +118,17 @@ export default function createTodoApp() {
 
     // Remove the task from the list
     taskElement.remove();
+
+    data[taskIndex] = {
+      title: taskTitle.value,
+      date: taskDate.value,
+      details: taskDetails.value,
+  };
+
+    data.splice(e.parentElement.parentElement.index, 1);
+    localStorage.setItem('data', JSON.stringify(data));
+
+
   };
   
   window.onload = function() {
