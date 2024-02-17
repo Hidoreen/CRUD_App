@@ -1,0 +1,213 @@
+
+:root{
+  --primary-color: hsl(34, 100%, 24%);
+  --text-color:  rgb(255, 255, 255);
+}
+
+*, *::after, *::before{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  font-family: "Monospace", sans-serif;
+  font-size: 1.2rem;
+  background-color:black;
+  height: 100vh;
+  position: relative;
+}
+
+header{
+  height: 50px;
+  background-color: hsla(0, 0%, 10%, 0.829);
+  color:var(--text-color);
+  font-weight: bold;
+  padding-left: 30px;
+}
+
+.header{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 30px;
+}
+
+.header i{
+  font-size: 1.8rem;
+}
+
+.app{
+  width: 36%;
+  height: 500px;
+  background-color: rgb(248, 248, 248);
+  text-align: center;
+  margin: 12px auto 0;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 3px 3px 10px hsl(34, 100%, 24%);
+  overflow-y: scroll;
+}
+
+.app::-webkit-scrollbar { width: 0 !important }
+
+.addNewTask{
+  background-color: hsl(34, 100%, 80%);
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  border-radius: 2px;
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+.addNewTask i{
+  background-color:var(--primary-color);
+  color: var(--text-color);
+  padding: 6px;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.addNewTask:hover{
+  background-color: hsl(34, 100%, 85%);;
+}
+
+#dialogPop{
+  background-color: hsla(0, 0%, 0%, 0.884);
+}
+
+h5{
+  margin: 20px;
+}
+
+.tasks div{
+  background-color: rgb(228, 255, 254);
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: flex-start;
+  border-left: 4px solid hsl(182, 100%, 42%) ;
+  border-radius: 10px;
+}
+
+.taskEditors{
+  align-self: flex-end;
+  padding: 8px;
+  background-color: rgb(255, 255, 255);
+  cursor: pointer;
+  border-radius: 2px;
+  display: flex;
+  gap: 28px;
+  border-radius: 4px;
+}
+
+.fa-trash{
+  color: rgba(255, 0, 0, 0.904);
+}
+
+.fa-pencil{
+  color: rgb(0, 119, 255);
+}
+
+.date{
+color: hsl(0, 0%, 30%);
+font-size: .9rem;
+}
+
+.details{
+  font-size: 1rem;
+  font-style: italic;
+  margin-top: 12px;
+}
+
+.fa-plus{
+  pointer-events: none;
+}
+
+#dialogPop{
+  background-color: rgb(255, 255, 255);
+  border: 0;
+  margin: 60px;
+  margin-left: auto;
+  min-width: 25%;
+  border-radius: 8px;
+  position: relative;
+}
+
+#taskDetailForm{
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 24px;
+  margin-top: 50px;
+}
+
+#taskDetailForm input{
+  padding: 8px;
+}
+
+.closeBtn{
+  position: absolute;
+  right: 0;
+  top: 0;
+  margin: 24px;
+  font-size: 1.7rem;
+  cursor: pointer;
+  padding: 4px 8px;
+}
+
+/* .closeBtn i{
+  pointer-events: none;
+} */
+
+#submitBtn{
+  padding: 8px;
+  background-color: hsl(120, 100%, 33%);
+  border: 0;
+  color: var(--text-color);
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#cancelBtn{
+  padding: 8px;
+  background-color: hsl(0, 100%, 48%);
+  border: 0;
+  color: var(--text-color);
+  border-radius: 4px;
+  font-weight: bold;
+  margin-left: 24px;
+  cursor: pointer;
+}
+
+.errorMsg{
+  color:hsl(0, 100%, 48%);
+  display: none;
+}
+
+.task{
+  margin-bottom: 24px;
+}
+
+.footer{
+  position: absolute;
+  width: 100%;
+  height: 40px;
+  bottom: 0;
+  background-color: hsla(0, 0%, 0%, 0.829);
+  color:var(--text-color);
+  font-size: 1rem;
+  text-align:end;
+  padding-right: 12px;
+  padding-top: 12px;
+}
+
+.footer a {
+  text-decoration: none;
+  color:var(--text-color);
+  cursor: pointer;
+}
