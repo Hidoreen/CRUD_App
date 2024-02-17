@@ -3,8 +3,7 @@ A simple Todo app built with HTML, CSS, and JavaScript. This app allows users to
 
 # Preview in browser
 
-
-(https://hidoreen.github.io/CRUD_App/)
+[Todo-App](https://hidoreen.github.io/CRUD_App/)
 
 # Features
 Add Task: Users can add new tasks by providing a title, date, and description.
@@ -48,4 +47,3 @@ Clone this repository to your local machine.
 Open the index.html file in your web browser.
 Contributing
 Contributions are welcome! Feel free to open an issue or submit a pull request.
-
